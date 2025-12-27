@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel Deployment Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-upload-alt"></i> Vercel Deployment</h1>
+            <p class="subtitle">Deploy your static sites to Vercel with ease</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="card">
+                    <h2><i class="fas fa-file-upload"></i> Deployment Details</h2>
+                    
+                    <form id="deployForm">
+                        <div class="form-group">
+                            <label for="siteName"><i class="fas fa-globe"></i> Site Name</label>
+                            <input type="text" id="siteName" placeholder="my-awesome-site" required>
+                            <small class="hint">This will become: your-site.vercel.app</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="htmlFile"><i class="fas fa-file-archive"></i> Upload File</label>
+                            <div class="file-upload-area" id="fileUploadArea">
+                                <i class="fas fa-cloud-upload-alt fa-2x"></i>
+                                <p>Drag & drop your HTML or ZIP file here</p>
+                                <p class="small">or click to browse</p>
+                                <input type="file" id="htmlFile" accept=".html,.zip">
+                                <div class="file-info" id="fileInfo"></div>
+                            </div>
+                            <small class="hint">Supports single HTML files or ZIP archives</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-key"></i> Token Status</label>
+                            <div class="token-status" id="tokenStatus">
+                                <!-- Token status will be dynamically added here -->
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="deployButton">
+                            <i class="fas fa-rocket"></i> Deploy to Vercel
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <div class="card">
+                    <h2><i class="fas fa-history"></i> Deployment Results</h2>
+                    <div id="result" class="result">
+                        <div class="result-placeholder">
+                            <i class="fas fa-cloud"></i>
+                            <p>Your deployment results will appear here</p>
+                        </div>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3><i class="fas fa-info-circle"></i> How to use:</h3>
+                        <ol>
+                            <li>Enter a unique site name</li>
+                            <li>Upload an HTML file or ZIP archive</li>
+                            <li>Click "Deploy to Vercel"</li>
+                            <li>Wait for deployment to complete</li>
+                            <li>Access your live site via the provided URL</li>
+                        </ol>
+                        
+                        <div class="note">
+                            <strong>Note:</strong> The system automatically rotates between 5 Vercel tokens if one fails.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>Vercel Deployment Interface &copy; <span id="currentYear"></span> | Using Vercel API</p>
+            <p class="footer-note">This interface uses a token rotation system for reliable deployments</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
