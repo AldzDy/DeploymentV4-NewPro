@@ -183,20 +183,20 @@ if (typeof module !== 'undefined' && module.exports) {
 
 fix dari Gemini
 result 
-*/
-let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
-let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
-let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
-let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
-let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
 
+let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
+let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
+let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
+let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
+let VERCEL_TOKEN_1 = "XMwtc6WUrk81uBJgQXd8DWES";
+*/
 // Note: Store your tokens in Vercel Dashboard as VERCEL_TOKEN_1, VERCEL_TOKEN_2, etc.
 const vercelTokens = [
-    process.env.VERCEL_TOKEN_1,
-    process.env.VERCEL_TOKEN_2,
-    process.env.VERCEL_TOKEN_3,
-    process.env.VERCEL_TOKEN_4,
-    process.env.VERCEL_TOKEN_5
+    "XMwtc6WUrk81uBJgQXd8DWES",  // Token 1
+    "iMZdXbdEerlvL8oYWphckb7B",  // Token 2  
+    "gvxjCj2AcqdjUwURpaoXhPjd",  // Token 3
+    "55pVAsQhXZ5Yqwo0VGI4W0Me",  // Token 4
+    "Vv5QDbKOmtHmlV4sjtodVAUc"   // Token 5
 ].filter(Boolean); // Only use tokens that are actually defined
 
 export default async function handler(req, res) {
