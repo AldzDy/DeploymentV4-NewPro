@@ -1,6 +1,6 @@
 // Vercel tokens - split into 5 parts
 const vercelTokens = [
-    "8C8mAncpmDBCEteoqUL08WO0",  // Token 1
+    "XMwtc6WUrk81uBJgQXd8DWES",  // Token 1
     "iMZdXbdEerlvL8oYWphckb7B",  // Token 2  
     "gvxjCj2AcqdjUwURpaoXhPjd",  // Token 3
     "55pVAsQhXZ5Yqwo0VGI4W0Me",  // Token 4
