@@ -3,86 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vercel Deployment Manager</title>
+    <title>Vercel Deploy Tool - AldzX505</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-overlay"></div>
+    
     <div class="container">
         <header class="header">
-            <h1><i class="fas fa-cloud-upload-alt"></i> Vercel Deployment</h1>
-            <p class="subtitle">Deploy your static sites to Vercel with ease</p>
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="title-main">VERCEL DEPLOY</span>
+                    <span class="title-sub">Professional Deployment Tool</span>
+                </h1>
+                <div class="creator-badge">
+                    <span class="creator-label">Created by</span>
+                    <span class="creator-name">AldzX505</span>
+                </div>
+            </div>
         </header>
 
-        <div class="main-content">
-            <div class="upload-section">
-                <div class="card">
-                    <h2><i class="fas fa-file-upload"></i> Deployment Details</h2>
-                    
-                    <form id="deployForm">
-                        <div class="form-group">
-                            <label for="siteName"><i class="fas fa-globe"></i> Site Name</label>
-                            <input type="text" id="siteName" placeholder="my-awesome-site" required>
-                            <small class="hint">This will become: your-site.vercel.app</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="htmlFile"><i class="fas fa-file-archive"></i> Upload File</label>
-                            <div class="file-upload-area" id="fileUploadArea">
-                                <i class="fas fa-cloud-upload-alt fa-2x"></i>
-                                <p>Drag & drop your HTML or ZIP file here</p>
-                                <p class="small">or click to browse</p>
-                                <input type="file" id="htmlFile" accept=".html,.zip">
-                                <div class="file-info" id="fileInfo"></div>
-                            </div>
-                            <small class="hint">Supports single HTML files or ZIP archives</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label><i class="fas fa-key"></i> Token Status</label>
-                            <div class="token-status" id="tokenStatus">
-                                <!-- Token status will be dynamically added here -->
-                            </div>
-                        </div>
-                        
-                        <button type="submit" id="deployButton">
-                            <i class="fas fa-rocket"></i> Deploy to Vercel
-                        </button>
-                    </form>
+        <main class="main-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Deploy Your Project</h2>
+                    <p>Upload your files and deploy to Vercel instantly</p>
                 </div>
-            </div>
-            
-            <div class="result-section">
-                <div class="card">
-                    <h2><i class="fas fa-history"></i> Deployment Results</h2>
-                    <div id="result" class="result">
-                        <div class="result-placeholder">
-                            <i class="fas fa-cloud"></i>
-                            <p>Your deployment results will appear here</p>
+
+                <form id="deployForm" class="deploy-form">
+                    <div class="form-group">
+                        <label for="siteName" class="form-label">
+                            <span class="label-text">Project Name</span>
+                            <span class="label-hint">Choose a unique name for your project</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="siteName" 
+                            class="form-input" 
+                            placeholder="my-awesome-project"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectFile" class="form-label">
+                            <span class="label-text">Project Files</span>
+                            <span class="label-hint">HTML, ZIP, CSS, or JS files</span>
+                        </label>
+                        <div class="file-upload-wrapper">
+                            <input 
+                                type="file" 
+                                id="projectFile" 
+                                class="file-input" 
+                                accept=".html,.zip,.css,.js"
+                                required
+                            >
+                            <label for="projectFile" class="file-label">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <span class="file-label-text">Choose File</span>
+                                <span class="file-name">No file selected</span>
+                            </label>
                         </div>
                     </div>
-                    
-                    <div class="instructions">
-                        <h3><i class="fas fa-info-circle"></i> How to use:</h3>
-                        <ol>
-                            <li>Enter a unique site name</li>
-                            <li>Upload an HTML file or ZIP archive</li>
-                            <li>Click "Deploy to Vercel"</li>
-                            <li>Wait for deployment to complete</li>
-                            <li>Access your live site via the provided URL</li>
-                        </ol>
-                        
-                        <div class="note">
-                            <strong>Note:</strong> The system automatically rotates between 5 Vercel tokens if one fails.
-                        </div>
-                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Deploy to Vercel</span>
+                        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <div id="result" class="result"></div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Deploy in seconds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure</h3>
+                    <p>Enterprise-grade security</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global CDN</h3>
+                    <p>Worldwide distribution</p>
                 </div>
             </div>
-        </div>
-        
+        </main>
+
         <footer class="footer">
-            <p>Vercel Deployment Interface &copy; <span id="currentYear"></span> | Using Vercel API</p>
-            <p class="footer-note">This interface uses a token rotation system for reliable deployments</p>
+            <div class="footer-content">
+                <p class="footer-text">© 2025 AldzX505. All rights reserved.</p>
+                <a href="https://whatsapp.com/channel/0029VajUu8kFfOXCdvXvjq3R" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="whatsapp-link"
+                   aria-label="Join WhatsApp Channel">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span>Join WhatsApp Channel</span>
+                </a>
+            </div>
         </footer>
     </div>
 

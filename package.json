@@ -1,0 +1,26 @@
+{
+  "name": "vercel-deploy-tool",
+  "version": "1.0.0",
+  "description": "Professional Vercel deployment tool by AldzX505",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build needed'",
+    "start": "vercel dev"
+  },
+  "keywords": [
+    "vercel",
+    "deployment",
+    "hosting",
+    "web"
+  ],
+  "author": "AldzX505",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "^3.5.1",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
